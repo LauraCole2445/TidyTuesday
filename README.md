@@ -2,7 +2,7 @@
 
 ## Week 29 2021
 
-* I used gganimate to show how the total number of times each character has been caught by the monster / unmasked the monster has evolved since the series started in 1969.
+* Annimation to show how the total number of times each character has been caught by the monster / unmasked the monster has evolved since the series started in 1969.
 
 * Scooby has had a rough ride! - 'Scooby-Dooby-Doo!'
 
