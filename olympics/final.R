@@ -98,3 +98,5 @@ ggplot()+
   xlab("Country")+
   ylab("Number of medals")+
   facet_wrap(~country)
+
+#this is a test
