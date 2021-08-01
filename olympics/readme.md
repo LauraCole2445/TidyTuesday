@@ -6,4 +6,3 @@
 
 ![Olympics](https://github.com/LauraCole2445/TidyTuesday/blob/master/olympics/olympics_gdp_v_medals.png)
 
----
