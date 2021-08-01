@@ -1,3 +1,4 @@
+#setup----
 library(tidyverse)
 library(janitor)
 library(dslabs)
@@ -8,14 +9,17 @@ library(ggflags)
 library(countrycode)
 library(ggimage)
 
-logo <- readPNG("..\\images\\olympics_logo.png",native=TRUE)
+logo <- readPNG("images\\olympics_logo.png",native=TRUE)
 start_year<-1992
+font<-"Scooby Doo"
+text_colour<-"black"
 
-data(gapminder)
-
+#read in data----
 # tuesdata <- tidytuesdayR::tt_load(2021, week = 31)
 olympics_raw <- tuesdata$olympics
 regions<-tuesdata$regions
+
+data(gapminder)
 
 regions <- regions %>% 
   clean_names()
@@ -54,9 +58,6 @@ countries_want<-gapminder%>%
   slice(1:12)%>%
   select(country)%>%
   mutate(gdp_rank=row_number())
-
-font<-"Scooby Doo"
-text_colour<-"black"
 
 country_list<-countries_want%>%
   select(country)%>%
@@ -103,5 +104,5 @@ plot<-data_for_plot%>%
 plot<-ggdraw(plot) +
   draw_image(logo,x = 0.1, y = 0.1, width = 0.1,hjust = 0, vjust = 1, halign = 1, valign = 1)
 
-save_plot("olympics_gdp_v_medals.png", plot, base_height = 7, base_width = 12.5)
+save_plot("wk_31_olympics\\olympics_gdp_v_medals.png", plot, base_height = 7, base_width = 12.5)
 

@@ -9,10 +9,20 @@ library(extrafont)
 library(directlabels)
 library(png)
 
+#source functions script
+source("functions.R")
 
+#load in images
+mystery_machine<-readPNG("images\\mystery_machine.png")
+scooby_doo_title<-readPNG("images\\scooby_doo_title.png")
 
-# Read data 
-scoobydoo <- as.data.frame(readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-07-13/scoobydoo.csv'))
+#set font and text colour
+font<-"Ink Free"
+text_colour<-"#E8AA57"
+
+# Read data----
+tuesdata <- tidytuesdayR::tt_load(2021, week = 29)
+scoobydoo <- tuesdata$scoobydoo
 
 scooby_gather_unmasked<-scoobydoo %>%
   mutate(date_aired=lubridate::ymd(date_aired))%>%
@@ -50,13 +60,6 @@ scooby_gather_caught<-scoobydoo %>%
 
 scooby_gathered<-rbind(scooby_gather_caught,scooby_gather_unmasked)
 
-lighten <- function(color, factor=1.4){
-  col <- col2rgb(color)
-  col <- col*factor
-  col <- rgb(t(col), maxColorValue=255)
-  col
-}
-
 factor<-0.75
 
 scooby_gathered<-scooby_gathered%>%
@@ -74,11 +77,8 @@ scooby_gathered<-scooby_gathered%>%
                           character=="Daphnie"& class=="unmasked" ~lighten("#6C4287",factor)))%>%
   ungroup()
 
-mystery_machine<-readPNG("..\\images\\mystery_machine.png")
-scooby_doo_title<-readPNG("..\\images\\scooby_doo_title.png")
 
-font<-"Ink Free"
-text_colour<-"#E8AA57"
+
 
 p<-scooby_gathered%>%
   ggplot(mapping = aes(x = ifelse(test = class == "caught", yes = -cumulative_sum, no = cumulative_sum),
