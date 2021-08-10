@@ -17,7 +17,7 @@ mystery_machine<-readPNG("images\\mystery_machine.png")
 scooby_doo_title<-readPNG("images\\scooby_doo_title.png")
 
 #set font and text colour
-font<-"Ink Free"
+font<-"Scooby Doo"
 text_colour<-"#E8AA57"
 
 # Read data----
@@ -113,7 +113,7 @@ p<-scooby_gathered%>%
   enter_grow() +
   exit_fade()
 
-n_frames<-10*length(unique(scooby_gathered$year))
+n_frames<-1*length(unique(scooby_gathered$year))
 
 gganimate::animate(p,
                    nframes=n_frames,
@@ -125,7 +125,7 @@ gganimate::animate(p,
                    end_pause=round(n_frames/2,0)
                    )
 
-anim_save("scooby_caught_v_unmasked_new.gif",
+anim_save("\\2021\\wk_29_Scooby_Doo\\scooby_caught_v_unmasked_test.gif",
           animation = last_animation(),
           path = getwd(),
           renderer = gifski_renderer(loop = FALSE))
