@@ -1,6 +1,6 @@
 # Tidy Tuesday Data Visualisations
 
-## Week 31 2021
+## Week 32 2021
 
 * The countries that have performed the best at the paralympic games from 1980 - 2016
 
@@ -10,13 +10,23 @@
 
 ---
 
-## Week 30 2021
+## Week 31 2021
 
 * Comparison of the number of medals won vs the total number of entries for the 12 countries with the highest GDP in 2011.
 
 * Added a dual y axis, used geom_facet() by ordered factor and inserted flags with geom_flag() from the ggflags package.
 
 ![Olympics](https://github.com/LauraCole2445/TidyTuesday/blob/master/2021/wk_31_olympics/olympics_gdp_v_medals.png)
+
+---
+
+## Week 30 2021
+
+* Levels of drought in the US from August 19 - August 21.
+
+* Map created with the "maps" package, added pallette with "RColorBrewer" and stitched animations together with "magick".
+
+![Drought](https://github.com/LauraCole2445/TidyTuesday/blob/master/2021/wk_30_droughts/final_animation.gif)
 
 ---
 
