@@ -104,7 +104,7 @@ drought<-drought_raw%>%
                         drought_level=="Moderate"~3,
                         drought_level=="Severe"~4,
                         drought_level=="Extreme"~5,
-                        drought_level=="Exceptional"~6))%>%#,
+                        drought_level=="Exceptional"~6))%>%
   mutate(drought_level = factor(drought_level, levels = c("Exceptional","Extreme","Severe","Moderate","Abnormally Dry","None")))%>%
   group_by(valid_start,drought_level)%>%
   summarise(pop_per=sum(pop_per))
@@ -200,10 +200,9 @@ time_series_animation<-animate(time_series_plot,
                                end_pause=round(n_frames/10,0),
                                renderer = magick_renderer())
 
-i=1
-final_gif <- image_append(c(map_animation[i], time_series_animation[i]),stack=TRUE)
+final_gif <- image_append(c(map_animation[1], time_series_animation[1]),stack=TRUE)
 
-for(i in 2:100){
+for(i in 2:n_frames){
   combined <- image_append(c(map_animation[i], time_series_animation[i]),stack=TRUE)
   final_gif <- c(final_gif, combined)
 }
