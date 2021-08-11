@@ -4,5 +4,5 @@
 
 * Added a dual y axis, used geom_facet() by ordered factor and inserted flags with geom_flag() from the ggflags package.
 
-![Olympics](https://github.com/LauraCole2445/TidyTuesday/blob/master/wk_31_olympics/olympics_gdp_v_medals.png)
+![Olympics](https://github.com/LauraCole2445/TidyTuesday/blob/master/2021/wk_31_olympics/olympics_gdp_v_medals.png)
 
